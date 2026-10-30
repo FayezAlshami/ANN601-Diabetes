@@ -1,0 +1,7 @@
+{
+  "dataset": "Pima Indians Diabetes Database",
+  "catalogue": "https://www.kaggle.com/datasets/uciml/pima-indians-diabetes-database",
+  "download_url": "https://raw.githubusercontent.com/jbrownlee/Datasets/master/pima-indians-diabetes.data.csv",
+  "download_date": "2026-10-29",
+  "sha256": "3c7023e0935097ac63e03c6f398928b6dfce30974d5591d3af09a9661876d9fe"
+}

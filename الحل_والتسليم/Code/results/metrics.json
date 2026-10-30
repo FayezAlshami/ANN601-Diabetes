@@ -1,0 +1,272 @@
+{
+  "seed": 42,
+  "dataset_sha256": "3c7023e0935097ac63e03c6f398928b6dfce30974d5591d3af09a9661876d9fe",
+  "environment": {
+    "python": "3.12.14",
+    "numpy": "2.5.4",
+    "scipy": "1.18.1",
+    "scikit-learn": "1.9.1",
+    "matplotlib": "3.11.2",
+    "joblib": "1.6.0"
+  },
+  "dataset": {
+    "rows": 768,
+    "features": [
+      "Pregnancies",
+      "Glucose",
+      "BloodPressure",
+      "SkinThickness",
+      "Insulin",
+      "BMI",
+      "DiabetesPedigreeFunction",
+      "Age"
+    ],
+    "class_counts": [
+      500,
+      268
+    ],
+    "duplicate_rows": 0,
+    "literal_missing_values": 0,
+    "zero_as_missing": {
+      "Glucose": 5,
+      "BloodPressure": 35,
+      "SkinThickness": 227,
+      "Insulin": 374,
+      "BMI": 11
+    },
+    "training_iqr_outliers": {
+      "Pregnancies": 1,
+      "Glucose": 0,
+      "BloodPressure": 12,
+      "SkinThickness": 2,
+      "Insulin": 12,
+      "BMI": 6,
+      "DiabetesPedigreeFunction": 16,
+      "Age": 11
+    }
+  },
+  "split": {
+    "train": {
+      "n": 460,
+      "classes": [
+        300,
+        160
+      ]
+    },
+    "validation": {
+      "n": 154,
+      "classes": [
+        100,
+        54
+      ]
+    },
+    "test": {
+      "n": 154,
+      "classes": [
+        100,
+        54
+      ]
+    }
+  },
+  "preprocessing": {
+    "imputation_medians": [
+      3.0,
+      117.0,
+      72.0,
+      30.0,
+      125.0,
+      32.4,
+      0.389,
+      29.0
+    ],
+    "scaler_mean": [
+      3.776086956521739,
+      121.81304347826087,
+      71.8586956521739,
+      29.595652173913045,
+      137.8521739130435,
+      32.46521739130434,
+      0.4845152173913038,
+      33.10217391304348
+    ],
+    "scaler_scale": [
+      3.3041268518790434,
+      29.228482302264027,
+      12.309400368381526,
+      9.167853964467334,
+      78.89434249604199,
+      6.874398547329332,
+      0.3410224170034366,
+      11.714557816636512
+    ]
+  },
+  "training": {
+    "max_epochs": 500,
+    "patience": 40,
+    "min_delta": 0.0001,
+    "batch_size": 32,
+    "learning_rate": 0.001,
+    "alpha": 0.0001,
+    "threshold": 0.5,
+    "selection": "minimum validation log loss"
+  },
+  "models": {
+    "MLP_A": {
+      "hidden_layers": [
+        32
+      ],
+      "parameters": 321,
+      "best_epoch": 24,
+      "epochs_run": 62,
+      "train": {
+        "accuracy": 0.782608695652174,
+        "precision": 0.7272727272727273,
+        "recall": 0.6,
+        "f1": 0.6575342465753424,
+        "specificity": 0.88,
+        "roc_auc": 0.8588125000000001,
+        "log_loss": 0.4435271655878019,
+        "confusion_matrix": [
+          [
+            264,
+            36
+          ],
+          [
+            64,
+            96
+          ]
+        ],
+        "tn": 264,
+        "fp": 36,
+        "fn": 64,
+        "tp": 96
+      },
+      "validation": {
+        "accuracy": 0.7922077922077922,
+        "precision": 0.75,
+        "recall": 0.6111111111111112,
+        "f1": 0.673469387755102,
+        "specificity": 0.89,
+        "roc_auc": 0.8794444444444446,
+        "log_loss": 0.4186260363305406,
+        "confusion_matrix": [
+          [
+            89,
+            11
+          ],
+          [
+            21,
+            33
+          ]
+        ],
+        "tn": 89,
+        "fp": 11,
+        "fn": 21,
+        "tp": 33
+      },
+      "test": {
+        "accuracy": 0.6948051948051948,
+        "precision": 0.5813953488372093,
+        "recall": 0.46296296296296297,
+        "f1": 0.5154639175257731,
+        "specificity": 0.82,
+        "roc_auc": 0.8116666666666666,
+        "log_loss": 0.4955687812061563,
+        "confusion_matrix": [
+          [
+            82,
+            18
+          ],
+          [
+            29,
+            25
+          ]
+        ],
+        "tn": 82,
+        "fp": 18,
+        "fn": 29,
+        "tp": 25
+      }
+    },
+    "MLP_B": {
+      "hidden_layers": [
+        32,
+        16
+      ],
+      "parameters": 833,
+      "best_epoch": 15,
+      "epochs_run": 55,
+      "train": {
+        "accuracy": 0.7956521739130434,
+        "precision": 0.75,
+        "recall": 0.61875,
+        "f1": 0.678082191780822,
+        "specificity": 0.89,
+        "roc_auc": 0.863,
+        "log_loss": 0.43916267318321256,
+        "confusion_matrix": [
+          [
+            267,
+            33
+          ],
+          [
+            61,
+            99
+          ]
+        ],
+        "tn": 267,
+        "fp": 33,
+        "fn": 61,
+        "tp": 99
+      },
+      "validation": {
+        "accuracy": 0.7987012987012987,
+        "precision": 0.7804878048780488,
+        "recall": 0.5925925925925926,
+        "f1": 0.6736842105263158,
+        "specificity": 0.91,
+        "roc_auc": 0.8744444444444445,
+        "log_loss": 0.4162661833696467,
+        "confusion_matrix": [
+          [
+            91,
+            9
+          ],
+          [
+            22,
+            32
+          ]
+        ],
+        "tn": 91,
+        "fp": 9,
+        "fn": 22,
+        "tp": 32
+      },
+      "test": {
+        "accuracy": 0.7142857142857143,
+        "precision": 0.6086956521739131,
+        "recall": 0.5185185185185185,
+        "f1": 0.56,
+        "specificity": 0.82,
+        "roc_auc": 0.8131481481481481,
+        "log_loss": 0.5007657586234667,
+        "confusion_matrix": [
+          [
+            82,
+            18
+          ],
+          [
+            26,
+            28
+          ]
+        ],
+        "tn": 82,
+        "fp": 18,
+        "fn": 26,
+        "tp": 28
+      }
+    }
+  },
+  "selected_model": "MLP_B",
+  "majority_baseline_test_accuracy": 0.6493506493506493
+}
